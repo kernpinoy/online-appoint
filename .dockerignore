@@ -1,0 +1,10 @@
+# git stuffs
+.git
+.gitattribute
+.gitignore
+
+# project stuffs
+README.md
+
+# Docker-ish stuffs
+docker-compose-yml
