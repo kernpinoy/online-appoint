@@ -6,3 +6,4 @@
 * Clive Dela Cruz
 * Camilla Noscal
 * Jericho Rosales
+* Kern Jacobo
