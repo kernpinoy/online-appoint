@@ -1,3 +1,5 @@
+# Windows-only files
+
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
@@ -22,6 +24,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Mac OS-only apps
 
 # General
 .DS_Store
