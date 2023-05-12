@@ -1,9 +1,9 @@
 # Online Appointment System written using in PHP
 
 ## Table of Contents
-1. [Table of Contents](#Table of Contents)
-2. [Dependencies](#Dependencies)
-3. [Contributors](#Contributors)
+1. [Table of Contents](#table-of-contents)
+2. [Dependencies](#dependencies)
+3. [Contributors](#contributors)
 
 ## Dependencies
 - [Docker](https://www.docker.com/products/docker-desktop/)
