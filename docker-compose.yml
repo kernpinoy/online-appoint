@@ -10,7 +10,7 @@ services:
   db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: phpmyadmin
       MYSQL_USER: group7
       MYSQL_PASSWORD: group7
