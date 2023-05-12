@@ -1,0 +1,25 @@
+version: '3.18' # Docker version
+name: online-appointment
+services:
+  www:
+    image: php:apache 
+    volumes:
+      - "./src:/var/www/html" # sync project dir with container dir 
+    ports: 
+      - 5000:80
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: phpmyadmin
+      MYSQL_USER: group7
+      MYSQL_PASSWORD: group7
+      MYSQL_ALLOW_EMPTY_PASSWORD: "1"
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d" # sync persistent SQL files
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 5001:80
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
