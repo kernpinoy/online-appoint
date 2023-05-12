@@ -10,12 +10,14 @@ services:
   db:
     image: mysql:latest
     environment:
+      MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: phpmyadmin
       MYSQL_USER: group7
       MYSQL_PASSWORD: group7
       MYSQL_ALLOW_EMPTY_PASSWORD: "1"
     volumes:
-      - "./db:/docker-entrypoint-initdb.d" # sync persistent SQL files
+      - "./sql:/docker-entrypoint-initdb.d" # sync persistent SQL files
+      - "./mysql:/var/lib/mysql"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
