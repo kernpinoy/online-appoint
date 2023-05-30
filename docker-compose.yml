@@ -1,13 +1,15 @@
 version: '3.18' # Docker version
 name: online-appointment
 services:
-  www: # for PHP
-    image: php:apache 
+  www:
+    # for PHP
+    image: php:apache
     volumes:
       - "./src:/var/www/html" # sync project dir with container dir 
-    ports: 
+    ports:
       - 5000:80
-  db: # for MySQL
+  db:
+    # for MySQL
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -18,7 +20,8 @@ services:
     volumes:
       - "./sql:/docker-entrypoint-initdb.d" # sync persistent SQL files
       - "./mysql-data:/var/lib/mysql"
-  phpmyadmin: # Parang Workbench
+  phpmyadmin:
+    # Parang Workbench
     image: phpmyadmin/phpmyadmin
     ports:
       - 5001:80
