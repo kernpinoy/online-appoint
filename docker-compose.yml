@@ -3,7 +3,9 @@ name: online-appointment
 services:
   www:
     # for PHP
-    image: php:apache
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
     volumes:
       - "./src:/var/www/html" # sync project dir with container dir 
     ports:
