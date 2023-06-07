@@ -22,6 +22,8 @@ services:
     volumes:
       - "./sql:/docker-entrypoint-initdb.d" # sync persistent SQL files
       - "./mysql-data:/var/lib/mysql"
+    ports:
+    - 5003:3306
   phpmyadmin:
     # Parang Workbench
     image: phpmyadmin/phpmyadmin
