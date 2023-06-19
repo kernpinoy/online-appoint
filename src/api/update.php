@@ -18,12 +18,13 @@ $appointments->id = $data->id;
 $appointments->full_name = $data->full_name;
 $appointments->office_to_visit = $data->office_to_visit;
 $appointments->person_to_visit = $data->person_to_visit;
+$appointments->purpose = $data->purpose;
 $appointments->with_vehicle = $data->with_vehicle;
 $appointments->plate_num = $data->plate_num;
 $appointments->time_of_visit = $data->time_of_visit;
 $appointments->email_address = $data->email_address;
 
-if (empty($appointments->id) || empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->with_vehicle) || empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
+if (empty($appointments->id) || empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->purpose) || empty($appointments->with_vehicle) || empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
     http_response_code(400);
     echo json_encode(array("message" => "Appointment data update failed. All fields are required."));
 } else if ($appointments->update_appointment()) {

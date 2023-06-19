@@ -16,6 +16,7 @@ $data = json_decode(file_get_contents("php://input"));
 $appointments->full_name = $data->full_name;
 $appointments->office_to_visit = $data->office_to_visit;
 $appointments->person_to_visit = $data->person_to_visit;
+$appointments->purpose = $data->purpose;
 $appointments->with_vehicle = $data->with_vehicle;
 $appointments->plate_num = $data->plate_num;
 $appointments->time_of_visit = $data->time_of_visit;
@@ -24,7 +25,7 @@ $appointments->email_address = $data->email_address;
 $response = array();
 
 try {
-  if (empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->with_vehicle) || empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
+  if (empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->purpose) || $appointments->with_vehicle === "0" && empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
     http_response_code(400);
     $response['error'] = "Required data is missing. Appointment cannot be created.";
   } else if ($appointments->insert_appointment()) {
