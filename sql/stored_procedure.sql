@@ -72,4 +72,14 @@ BEGIN
     COMMIT;
 END$$
 
+CREATE DEFINER=`root`@`%` PROCEDURE `car_count`()
+BEGIN
+	SELECT 
+		COUNT(`with_vehicle`) AS vehicle_num
+	FROM
+		`online_appoint`.`appointments`
+	WHERE
+		`with_vehicle` = 1;
+END$$
+
 DELIMITER ;
