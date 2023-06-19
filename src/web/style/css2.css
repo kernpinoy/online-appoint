@@ -80,7 +80,6 @@ body {
 	box-shadow: none;
 	color: #23242a;
 	font-size: 1em;
-	letter-spacing: 0.5em;
 	transition: 0.5s;
 	z-index: 10;
 }
