@@ -28,7 +28,6 @@ CREATE TABLE `appointments` (
     CHECK (`time_of_visit` <> ''),
     CONSTRAINT `unique_full_name` UNIQUE (`full_name`),
     CONSTRAINT `unique_email` UNIQUE (`email_address`),
-    CONSTRAINT `unique_plate_num` UNIQUE (`plate_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Create stored procedure for the appointments table
