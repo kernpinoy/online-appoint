@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 
-	<html>
-	<head>
-		<title>Appointment</title>
-		<link rel="stylesheet" href ="css.css">
-	</head>
-			<body>
-				<div class = "wrapper">
-					<nav class = "navbar">
-						<img class = "logo" src = "bgge.png">
-						<ul>
-							<li><a href = "welcome.html">Home</a></li>
-							
-							<li><a href = "about.html">About</a></li>
-							
-						</ul>
-					</nav>
-	<script type="text/javascript">
-	 function validation(event)
-                                  {
-                                    event & event.preventDefault(); 
-                                    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-                                    var emailVal = document.forms["testForm"]["emailInput"].value;
-									var userVal = document.forms["testForm"]["userName"].value;
-                                    console.log(emailVal);
-									 console.log(userVal);
-                                    if (reg.test(emailVal) == false)
-                                     {
-                                         alert('Invalid Email Address');
-                                         return false;
-                                        }
-									if ((userVal) == false)
-                                     {
-                                         alert('Invalid Username');
-                                         return false;
-                                        }
-									else{
-                                  alert('Success to Appointment');
-                                  return true;
-								  }
-                            }
-							
+<html>
+
+<head>
+	<title>Appointment</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<img class="logo" src="bgge.png">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+
+				<li><a href="about.html">About</a></li>
+
+			</ul>
+		</nav>
+		<script type="text/javascript">
+			function validation(event) {
+				event & event.preventDefault();
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				var emailVal = document.forms["testForm"]["emailInput"].value;
+				var userVal = document.forms["testForm"]["userName"].value;
+				console.log(emailVal);
+				console.log(userVal);
+				if (reg.test(emailVal) == false) {
+					alert('Invalid Email Address');
+					return false;
+				}
+				if ((userVal) == false) {
+					alert('Invalid Username');
+					return false;
+				}
+				else {
+					alert('Success to Appointment');
+					return true;
+				}
+			}
+
 			function saveText() {
 				var applicantName;
 				applicantName = document.getElementById("namedd").value;
-				document.getElementById("names").innerHTML=(applicantName);
-				
+				document.getElementById("names").innerHTML = (applicantName);
+
 			}		
-     </script>
-		
-		<div class = "wrapper">
-		<h3>Online Appointment Here..</h3>
-		<div class = "reg">
-			<form id = "reg" name = "testForm" onSubmit="return validation(event)" method = "post" action = "..php">
-				<br><label>Name of Visitor: </label><br>
-				<input type = "text" name = "userName" 
-				placeholder = "Name of Visitor" id = "namedd" required/>
-				<br><br>
-				<label>Office to Visit: </label><br>
-				<input type = "text" name = "office" 
-				placeholder = "Office to Visit" id = "office" required/>
-				<br><br>
-				<label>Person to Visit: </label><br>
-				<input type = "text" name = "person" 
-				placeholder = "Person to Visit" id = "person" required/>
-				<br><br>
-				<label>Purpose of Visit: </label><br>
-				<input type = "text" name = "purpose" 
-				placeholder = "Purpose of Visit" id = "purpose" required/>
-				<br><br>
-				<label>With Vehicle: </label><br>
-				<input type = "radio" id = "yesorno" name ="with_vechile">
-				<span id = "yesorno">Yes</span>
-				<input type = "radio" id = "yesorno" name ="with_vechile">
-				<span id = "yesorno">No</span>
-				<br><br>
-				<label>Plate #: </label><br>
-				<input type = "text" name = "plate" 
-				placeholder = "Plate#" id = "plateNum" required/>
-				<br><br>
-				<label>Time of Visit: </label><br>
-				<input type = "time" name = "time" id = "oras" required/>
-				<br><br>
-				<label>Email Address: </label><br>
-				<input type = "text" name = "emailInput" 
-				placeholder = "Email Address" id = "email" required/>
-				<br><br>	
-				<button type = "submit" id = "sub" onClick = "saveText()">Appointment</button>
-				<br>
-				<br>
-			</form>
-				
-			
-			
+		</script>
+
+		<div class="wrapper">
+			<h3>Online Appointment Here..</h3>
+			<div class="reg">
+				<form id="reg" name="testForm" onSubmit="return validation(event)" method="post" action="..php">
+					<br><label>Name of Visitor: </label><br>
+					<input type="text" name="userName" placeholder="Name of Visitor" id="namedd" required />
+					<br><br>
+					<label>Office to Visit: </label><br>
+					<input type="text" name="office" placeholder="Office to Visit" id="office" required />
+					<br><br>
+					<label>Person to Visit: </label><br>
+					<input type="text" name="person" placeholder="Person to Visit" id="person" required />
+					<br><br>
+					<label>Purpose of Visit: </label><br>
+					<input type="text" name="purpose" placeholder="Purpose of Visit" id="purpose" required />
+					<br><br>
+					<label>With Vehicle: </label><br>
+					<input type="radio" id="yesorno" name="with_vechile">
+					<span id="yesorno">Yes</span>
+					<input type="radio" id="yesorno" name="with_vechile">
+					<span id="yesorno">No</span>
+					<br><br>
+					<label>Plate #: </label><br>
+					<input type="text" name="plate" placeholder="Plate#" id="plateNum" required />
+					<br><br>
+					<label>Time of Visit: </label><br>
+					<input type="time" name="time" id="oras" required />
+					<br><br>
+					<label>Email Address: </label><br>
+					<input type="text" name="emailInput" placeholder="Email Address" id="email" required />
+					<br><br>
+					<button type="submit" id="sub" onClick="saveText()">Appointment</button>
+					<br>
+					<br>
+				</form>
+
+
+
+			</div>
 		</div>
-		</div>
-		</body>
-	</html>
+</body>
+
+</html>
