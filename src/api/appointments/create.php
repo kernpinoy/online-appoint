@@ -28,12 +28,16 @@ try {
   if (empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->purpose) || $appointments->with_vehicle === "0" && empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
     http_response_code(400);
     $response['error'] = "Required data is missing. Appointment cannot be created.";
-  } else if ($appointments->insert_appointment()) {
+    return;
+  }
+
+  try {
+    $appointments->insert_appointment();
     http_response_code(201);
     $response['message'] = "Appointment created successfully.";
-  } else {
+  } catch(Exception $e) {
     http_response_code(500);
-    $response['error'] = "Appointment creation failed.";
+    $response['error'] = $e->getMessage();
   }
 } catch (PDOException $e) {
   http_response_code(500);

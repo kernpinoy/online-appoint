@@ -5,7 +5,7 @@ const generateAppointmentObject = (fullName, officeToVisit, personToVisit, purpo
         person_to_visit: personToVisit,
         purpose: purpose,
         with_vehicle: withVehicle,
-        plate_num: withVehicle === "1" ? plateNum : "None", 
+        plate_num: withVehicle === "1" ? plateNum : "None",
         time_of_visit: formatTime(timeOfVisit),
         email_address: emailAddress
     };
@@ -40,12 +40,11 @@ async function post_data(url = "", data = {}) {
 
         if (response.ok) {
             return response.json();
-        } else if (response.status === 400) {
-            throw new Error('Required data is missing. Appointment cannot be created.');
         } else if (response.status === 500) {
-            throw new Error('Appointment creation failed.');
+            const errorResponse = await response.json();
+            throw new Error(errorResponse.error || 'Appointment creation failed.');
         } else {
-            throw new Error('An error occurred.');
+            throw new Error('An error occurred. Try again later.');
         }
     } catch (error) {
         return error;
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert(data.message);
             })
             .catch((error) => {
-                alert(error.message);
                 alert(error.error);
             });
 
