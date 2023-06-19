@@ -18,36 +18,6 @@
 
 			</ul>
 		</nav>
-		<script type="text/javascript">
-			function validation(event) {
-				event & event.preventDefault();
-				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-				var emailVal = document.forms["testForm"]["emailInput"].value;
-				var userVal = document.forms["testForm"]["userName"].value;
-				console.log(emailVal);
-				console.log(userVal);
-				if (reg.test(emailVal) == false) {
-					alert('Invalid Email Address');
-					return false;
-				}
-				if ((userVal) == false) {
-					alert('Invalid Username');
-					return false;
-				}
-				else {
-					alert('Success to Appointment');
-					return true;
-				}
-			}
-
-			function saveText() {
-				var applicantName;
-				applicantName = document.getElementById("namedd").value;
-				document.getElementById("names").innerHTML = (applicantName);
-
-			}		
-		</script>
-
 		<div class="wrapper">
 			<h3>Online Appointment Here..</h3>
 			<div class="reg">
