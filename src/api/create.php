@@ -21,14 +21,23 @@ $appointments->plate_num = $data->plate_num;
 $appointments->time_of_visit = $data->time_of_visit;
 $appointments->email_address = $data->email_address;
 
-if (empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->with_vehicle) || empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
+$response = array();
+
+try {
+  if (empty($appointments->full_name) || empty($appointments->office_to_visit) || empty($appointments->person_to_visit) || empty($appointments->with_vehicle) || empty($appointments->plate_num) || empty($appointments->time_of_visit) || empty($appointments->email_address)) {
     http_response_code(400);
-    echo json_encode(array("message" => "Required data is missing. Appointment cannot be created."));
-} else if ($appointments->insert_appointment()) {
+    $response['error'] = "Required data is missing. Appointment cannot be created.";
+  } else if ($appointments->insert_appointment()) {
     http_response_code(201);
-    echo json_encode(array("message" => "Appointment created successfully."));
-} else {
+    $response['message'] = "Appointment created successfully.";
+  } else {
     http_response_code(500);
-    echo json_encode(array("message" => "Appointment creation failed."));
+    $response['error'] = "Appointment creation failed.";
+  }
+} catch (PDOException $e) {
+  http_response_code(500);
+  $response['error'] = $e->getMessage();
 }
+
+echo json_encode($response);
 ?>
