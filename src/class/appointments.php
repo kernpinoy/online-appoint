@@ -138,5 +138,13 @@ class Appointment
 
         return false;
     }
+
+    public function car_count() {
+        $sql = "CALL car_count()";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)['vehicle_num'];
+    }
 }
 ?>
