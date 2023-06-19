@@ -82,4 +82,25 @@ BEGIN
 		`with_vehicle` = 1;
 END$$
 
+CREATE PROCEDURE `create_login`(IN p_username VARCHAR(50), IN p_password VARCHAR(50))
+BEGIN
+    INSERT INTO `login` (`username`, `password`)
+    VALUES (p_username, p_password);
+END $$
+
+CREATE PROCEDURE `get_login_by_username`(IN p_username VARCHAR(50))
+BEGIN
+    SELECT * FROM `login` WHERE `username` = p_username;
+END $$
+
+CREATE PROCEDURE `update_login_password`(IN p_username VARCHAR(50), IN p_new_password VARCHAR(50))
+BEGIN
+    UPDATE `login` SET `password` = p_new_password WHERE `username` = p_username;
+END $$
+
+CREATE PROCEDURE `delete_login_by_username`(IN p_username VARCHAR(50))
+BEGIN
+    DELETE FROM `login` WHERE `username` = p_username;
+END $$
+
 DELIMITER ;

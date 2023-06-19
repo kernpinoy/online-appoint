@@ -2,7 +2,7 @@
 CREATE SCHEMA IF NOT EXISTS `online_appoint`;
 
 USE `online_appoint`;
-CREATE TABLE `appointments` (
+CREATE TABLE IF NOT EXISTS `appointments` (
   `id` int NOT NULL AUTO_INCREMENT,
   `full_name` varchar(100) NOT NULL,
   `office_to_visit` varchar(50) NOT NULL,
@@ -24,3 +24,8 @@ CREATE TABLE `appointments` (
   CONSTRAINT `appointments_chk_7` CHECK ((`email_address` <> _utf8mb4'')),
   CONSTRAINT `appointments_chk_8` CHECK ((`time_of_visit` <> _utf8mb4''))
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='		'
