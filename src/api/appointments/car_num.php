@@ -9,5 +9,6 @@ $database = new Database();
 $db = $database->get_connection();
 $appointments = new Appointment($db);
 
+http_response_code(201);
 echo json_encode(array("vehicle_count" => $appointments->car_count()));
 ?>
