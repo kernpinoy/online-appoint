@@ -16,7 +16,7 @@ $appointment->id = $data->id;
 
 $appointment->get_single_appointment();
 
-if ($appointment->full_name != null) {
+if (!empty($appointment->id)) {
     $appointment_arr = array(
         "id" => $appointment->id,
         "full_name" => $appointment->full_name,
