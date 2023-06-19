@@ -70,9 +70,37 @@ const checkEmptyFields = (appointmentObject = {}) => {
     return false;
 };
 
+const getCarNums = async () => {
+    const response = await fetch("http://localhost:5000/api/appointments/car_num.php");
+
+    if (response.ok) {
+        const data = await response.json();
+        let veh_count = data.vehicle_count;
+        let max_car = 5;
+
+        const carCountDiv = document.querySelector(".car_count");
+        carCountDiv.innerHTML = `
+        <label>Car count: <span>${veh_count}</span> / ${max_car}</label><br><br>
+      `;
+
+        const noCarBtn = document.getElementById("vec-no");
+        const hasCarBtn = document.getElementById("vec-yes");
+
+        if (veh_count === max_car) {
+            noCarBtn.checked = true; // Lock to "No" if veh_count reaches max_car
+            hasCarBtn.disabled = true;
+            const plate = document.getElementById("plateNum");
+            plate.disabled = true;
+        } else {
+            const plate = document.getElementById("plateNum");
+            plate.disabled = false;
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("reg");
-
+    getCarNums();
     const noCarBtn = document.getElementById("vec-no");
     const hasCarBtn = document.getElementById("vec-yes");
 
@@ -88,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const plate = document.getElementById("plateNum");
         plate.disabled = true;
     });
+
 
     form.addEventListener("submit", (ev) => {
         ev.preventDefault();
@@ -115,6 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert(error.error);
             });
 
-        ev.preventDefault();
+        window.location.reload;
     });
 });
