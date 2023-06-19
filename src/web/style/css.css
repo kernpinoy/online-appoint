@@ -3,7 +3,7 @@
 	padding: 0;	
 }
 body {
-	background: url('bgg.png') no-repeat;
+	background: url('../assets/bgg.png') no-repeat;
 	background-size: cover;
 }
 
