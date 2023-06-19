@@ -1,7 +1,8 @@
-*{
+* {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
+
 body {
 	background: url('../assets/bgg.png') no-repeat;
 	background-size: cover;
@@ -12,36 +13,43 @@ body {
 	width: 100%;
 	background-color: transparent;
 }
+
 .logo {
 	width: 270px;
 	height: auto;
 	padding: 1px 70px;
 }
+
 .navbar ul {
 	float: right;
 	margin-right: 100px;
 }
+
 .navbar ul li {
 	list-style: none;
 	margin: 0 8px;
 	display: inline-block;
 	line-height: 80px;
 }
-.navbar ul li a{
+
+.navbar ul li a {
 	text-decoration: none;
 	color: white;
 	font-size: 20px;
 	padding: 6px 13px;
 	font-family: 'Roboto', sans-serif;
 }
-.navbar ul li a.active{
+
+.navbar ul li a.active {
 	background: #03AC13;
 }
-.navbar ul li a:hover{
+
+.navbar ul li a:hover {
 	background: #3DED97;
 	border-radius: 2px;
 }
-.wrapper .gitna{
+
+.wrapper .gitna {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -50,14 +58,15 @@ body {
 	user-select: none;
 }
 
-.gitna h1{
+.gitna h1 {
 	color: white;
 	font-size: 60px;
 	font-weight: bold;
 	width: 900px;
 	text-align: center;
 }
-.gitna h2{
+
+.gitna h2 {
 	color: white;
 	font-size: 30px;
 	font-weight: bold;
@@ -65,13 +74,16 @@ body {
 	margin-top: 10px;
 	text-align: center;
 }
-.gitna .buttons{
+
+.gitna .buttons {
 	margin: 35px 400px;
 }
-.gitna .buttonss{
+
+.gitna .buttonss {
 	margin: 35px 270px;
 }
-.buttons button{
+
+.buttons button {
 	height: 50px;
 	width: 150px;
 	font-size: 18px;
@@ -84,7 +96,8 @@ body {
 	border-radius: 25px;
 	transition: .3s;
 }
-.buttonss button{
+
+.buttonss button {
 	height: 50px;
 	width: 150px;
 	font-size: 18px;
@@ -97,33 +110,41 @@ body {
 	border-radius: 25px;
 	transition: .3s;
 }
-.buttons .btn{
+
+.buttons .btn {
 	margin-left: 25px;
 }
-.buttonss .btn{
+
+.buttonss .btn {
 	margin-left: 25px;
 }
-.buttons button:hover{
+
+.buttons button:hover {
 	background: #3DED97;
 }
-.buttonss button:hover{
+
+.buttonss button:hover {
 	background: #3DED97;
 }
+
 .reg {
 	width: 40%;
 	margin: auto;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 	padding: 10px;
 }
+
 #reg {
 	width: 60%;
 	margin: auto;
 }
+
 label {
 	color: white;
 	font-size: 20px;
 	font-style: Bold;
 }
+
 h3 {
 	color: #32612D;
 	text-align: center;
@@ -131,6 +152,7 @@ h3 {
 	padding: 20px;
 	font-size: 30px;
 }
+
 #namedd {
 	width: 300px;
 	outline: 0;
@@ -138,6 +160,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #office {
 	width: 300px;
 	outline: 0;
@@ -145,6 +168,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #person {
 	width: 300px;
 	outline: 0;
@@ -152,6 +176,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #purpose {
 	width: 300px;
 	outline: 0;
@@ -159,6 +184,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #plateNum {
 	width: 300px;
 	outline: 0;
@@ -166,6 +192,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #oras {
 	width: 300px;
 	outline: 0;
@@ -173,6 +200,7 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
+
 #email {
 	width: 300px;
 	outline: 0;
@@ -180,13 +208,15 @@ h3 {
 	border: 3px groove;
 	border-radius: 3px;
 }
-#yesorno{
+
+#yesorno {
 	color: white;
 	width: 20px;
 	padding: 3px;
 	font-size: 20px;
 	font-style: Bold;
 }
+
 #sub {
 	width: 300px;
 	outline: 0;
@@ -197,4 +227,3 @@ h3 {
 	font-style: Italic;
 	background-color: #03AC13;
 }
-
