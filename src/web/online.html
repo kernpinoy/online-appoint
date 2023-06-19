@@ -14,15 +14,12 @@
 			<img class="logo" src="./assets/bgge.png">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-
-				<li><a href="about.html">About</a></li>
-
 			</ul>
 		</nav>
 		<div class="wrapper">
 			<h3>Online Appointment Here...</h3>
 			<div class="reg">
-				<form id="reg" name="testForm" method="post" onsubmit="return false;">
+				<form id="reg">
 					<br><label>Name of Visitor: </label><br>
 					<input type="text" name="userName" placeholder="Name of Visitor" id="namedd" required />
 					<br><br>
@@ -35,6 +32,9 @@
 					<label>Purpose of Visit: </label><br>
 					<input type="text" name="purpose" placeholder="Purpose of Visit" id="purpose" required />
 					<br><br>
+					<div class="car_count">
+						<label>Car count: </label><br><br>	
+					</div>
 					<label>With Vehicle: </label><br>
 					<div class="radio-group">
 						<input type="radio" id="vec-yes" name="with_vehicle" value="1">
@@ -42,7 +42,7 @@
 						<input type="radio" id="vec-no" name="with_vehicle" value="0">
 						<span id="yesorno">No</span>
 					</div>
-					<br><br>
+					<br>
 					<label>Plate #: </label><br>
 					<input type="text" name="plate" placeholder="Plate#" id="plateNum" required />
 					<br><br>
@@ -52,7 +52,7 @@
 					<label>Email Address: </label><br>
 					<input type="text" name="emailInput" placeholder="Email Address" id="email" required />
 					<br><br>
-					<button type="submit" id="sub">Appointment</button>
+					<button type="button" id="sub">Appointment</button>
 					<br>
 					<br>
 				</form>
