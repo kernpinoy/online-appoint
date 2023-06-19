@@ -1,6 +1,6 @@
 <?php
-include_once '../config/database.php';
-include_once '../class/appointments.php';
+include_once '../../config/database.php';
+include_once '../../class/appointments.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
