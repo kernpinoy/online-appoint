@@ -76,7 +76,7 @@ const getCarNums = async () => {
     if (response.ok) {
         const data = await response.json();
         let veh_count = data.vehicle_count;
-        let max_car = 5;
+        let max_car = 50;
 
         const carCountDiv = document.querySelector(".car_count");
         carCountDiv.innerHTML = `
@@ -87,7 +87,7 @@ const getCarNums = async () => {
         const hasCarBtn = document.getElementById("vec-yes");
 
         if (veh_count === max_car) {
-            noCarBtn.checked = true; // Lock to "No" if veh_count reaches max_car
+            noCarBtn.checked = true;
             hasCarBtn.disabled = true;
             const plate = document.getElementById("plateNum");
             plate.disabled = true;
@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("oras").value,
             document.getElementById("email").value
         );
+        
+        console.log(appointmentEntry);
 
         if (checkEmptyFields(appointmentEntry)) {
             alert("All fields must be filled up.")
@@ -139,11 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
         post_data("http://localhost:5000/api/appointments/create.php", appointmentEntry)
             .then((data) => {
                 alert(data.message);
+                window.location.replace("/web/online.html");
             })
             .catch((error) => {
                 alert(error.error);
             });
 
-        window.location.reload;
     });
 });

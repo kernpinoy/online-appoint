@@ -5,31 +5,31 @@
 <head>
 	<title>HOME</title>
 	<link rel="stylesheet" href="../style/css2.css">
+	<script src="../js/submit_login.js"></script>
 </head>
 
 <body>
 
 	<div class="box">
-		<form>
+		<form id = "login-form">
 			<h2>Sign in</h2>
 
 			<div class="inputBox">
-				<input type="text" required="required">
+				<input type="text" required="required" id="user">
 				<span>Username</span>
 				<i></i>
 			</div>
 			<div class="inputBox">
-				<input type="password" required="required">
+				<input type="password" required="required" id="pass">
 				<span>Password</span>
 				<i></i>
 			</div>
 			<br>
 			<br>
 			<input type="submit" value="Login">
+			<input type="button" id="go-back" value="Back">
 		</form>
 	</div>
-
-
 </body>
 
 </html>
