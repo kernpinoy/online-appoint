@@ -125,7 +125,8 @@ body {
 	color: white;
 }
 
-.box form input[type="submit"] {
+.box form input[type="submit"],
+.box form input[type="button"] {
 	border: none;
 	outline: none;
 	padding: 9px 25px;
@@ -136,6 +137,8 @@ body {
 	font-weight: 600;
 	width: 100px;
 	margin-top: 10px;
+	display: inline-block;
+	margin-right: 10px;
 }
 
 .box form input[type="submit"]:active {
