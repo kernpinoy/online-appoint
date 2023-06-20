@@ -14,7 +14,7 @@ $appointment_count = $stmt->rowCount();
 // Construct the JSON
 if ($appointment_count > 0) {
     $appointments_arr = array();
-    $appointments_arr["body"] = array();
+    $appointments_arr["body"] = array();    
     $appointments_arr["appointment_count"] = $appointment_count;
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
