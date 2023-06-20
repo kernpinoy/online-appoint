@@ -24,6 +24,7 @@ if ($appointment_count > 0) {
             "full_name" => $full_name,
             "office_to_visit" => $office_to_visit,
             "person_to_visit" => $person_to_visit,
+            "purpose" => $purpose,
             "with_vehicle" => $with_vehicle,
             "plate_num" => $plate_num,
             "time_of_visit" => $time_of_visit,
