@@ -5,7 +5,7 @@ const generateAppointmentObject = (fullName, officeToVisit, personToVisit, purpo
         person_to_visit: personToVisit,
         purpose: purpose,
         with_vehicle: withVehicle,
-        plate_num: withVehicle === "1" ? plateNum : "None",
+        plate_num: withVehicle === "1" ? plateNum : "N/A",
         time_of_visit: formatTime(timeOfVisit),
         email_address: emailAddress
     };
@@ -76,11 +76,11 @@ const getCarNums = async () => {
     if (response.ok) {
         const data = await response.json();
         let veh_count = data.vehicle_count;
-        let max_car = 50;
+        let max_car = 20;
 
         const carCountDiv = document.querySelector(".car_count");
         carCountDiv.innerHTML = `
-        <label>Car count: <span>${veh_count}</span> / ${max_car}</label><br><br>
+        <label>Vehicle count: <span>${veh_count}</span> / ${max_car}</label><br><br>
       `;
 
         const noCarBtn = document.getElementById("vec-no");
